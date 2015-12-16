@@ -11,18 +11,20 @@ float sunX = 0, sunY = 100;
 float waterline;
 Boat Fleet[] = new Boat[group];
 Squid squad[] = new Squid[fishes];
+Lobster gss[] = new Lobster[cluster];
 String squadNames[] = { "Bob", "Mike", "Joe", "Will", "Alice", "Jill", "Jamie", "Tom" };
 String fleetNames[] = { "Essix", "Yamato", "Midway", "Ford", "Zumwalt" };
-Lobster gss[] = new Lobster[cluster];
 int score = 0;
 //used for pause methods
 float [] boatTemp = {0,0,0,0,0};
 float [] squidTemp = {0,0,0,0,0,0,0,0};
-float [] lobsterTempDX = new float[4];
-float [] lobsterTempDY = new float[4];
+float [] lobsterTempDX = {0,0,0,0};
+float [] lobsterTempDY = {0,0,0,0};
+// triangle variables, number and then the space between them
 float triangle = 15;
 float triangleS;
 float button1X, button1Y, button1q = 50, button1p = 20;
+// used for displaying the selected lobster
 boolean display = false;
 void setup()
 {
@@ -187,7 +189,7 @@ void help()
   text("press Y to sort squids by Y position", 50, 200);
   text("press S to sort squids by speed",50, 225);
   text("press L to sort squids by number of legs", 50, 250);
-  text("press $ to SORT and display some LOBSTER variables", 50, 275);
+  text("press $ or hover HI/LO to SORT and display some LOBSTER variables", 50, 275);
   text("press a to display a list pre-sort, or a list post sort", 50, 300);
   text("after observing the list press m to resume movement", 50, 325);
   text("press any button to close", 50, 425);
